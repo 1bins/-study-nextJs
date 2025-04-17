@@ -1,3 +1,12 @@
+// NextJs는 다른 CSS와의 중복을 방지하기 위해 import를 app.tsx외에는 사용할 수 없음
+// CSS Module
+import style from "./index.module.scss";
+
 export default function Home() {
-  return <h1>인덱스</h1>;
+  return (
+      <>
+        <h1 className={style.h1}>인덱스</h1>
+        <h2 className={style.h2}>H2</h2>
+      </>
+  );
 }
