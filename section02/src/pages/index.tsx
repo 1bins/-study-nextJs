@@ -7,6 +7,7 @@ import BookItem from "@/components/book-item";
 import {InferGetStaticPropsType} from "next";
 import fetchBooks from "@/lib/fetch-books";
 import fetchRandomBooks from "@/lib/fetch-random-books";
+import Head from "next/head";
 
 // SSR 방식으로 작동
 /*
@@ -54,6 +55,13 @@ export const getStaticProps = async () => {
 export default function Home({ allBooks, recoBooks }: InferGetStaticPropsType<typeof getStaticProps>) {
 
   return (
+    <>
+      <Head>
+        <title>한입북스</title>
+        <meta property="og.image" content="/thumbnail.png" />
+        <meta property="og.title" content="한입북스" />
+        <meta property="og.description" content="한입북스 등록된 도서들을 만나보세요" />
+      </Head>
       <div className={style.container}>
         <section>
           <h3>지금 추천하는 도서</h3>
@@ -68,6 +76,7 @@ export default function Home({ allBooks, recoBooks }: InferGetStaticPropsType<ty
           )}
         </section>
       </div>
+    </>
   );
 }
 

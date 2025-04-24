@@ -42,3 +42,24 @@ export const getStaticProps = async () => {
   }
 }; 
 ```
+
+### SEO 설정하기
+
+```tsx
+import Head from "next/head";
+
+export default function Page() {
+  return(
+    <div>
+      <Head>
+        <title>타이틀</title>
+        <meta property="og.image" content="/썸네일.jpg"/> <!-- public경로 -->
+        <meta property="og.title" content="타이틀"/>
+        <meta property="og.description" content="설명"/>
+      </Head>
+      
+      {content}
+    </div>
+  )
+}
+```
