@@ -27,3 +27,18 @@ export async function getServerSideProps(context) {
 > - 빠른 속도(CDN에 올릴 수 있음)
 > - 데이터가 자주 바뀌는 페이지에 부적합
 > - SEO에 좋음
+
+#### ISR(Incremental Static Regeneration) - 증분 정적 재생성
+- 빌드 타임에 생성된 정적 페이지를, 일정 시간마다 서버에서 백그라운드로 새로 만들어주는 기능
+- SSG방식에서 `revalidate` 추가
+```tsx
+export const getStaticProps = async () => {
+  ...
+
+  return {
+    props: {},
+    // ISR 방식 (몇 초 주기로 인덱스 페이지 재검증할지)
+    revalidate: 3
+  }
+}; 
+```

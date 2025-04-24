@@ -43,7 +43,11 @@ export const getStaticProps = async () => {
     props: {
       allBooks,
       recoBooks,
-    }
+    },
+    // ISR 방식 (몇 초 주기로 인덱스 페이지 재검증할지)
+    // revalidate: 3,
+
+    // on-Demand ISR 방식
   }
 };
 
