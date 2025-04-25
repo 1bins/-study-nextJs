@@ -1,6 +1,17 @@
 # NEXT 공부하기
 
 ## 페이지 라우터(Page Router)
+설치 `npx create-next-app@14` 
+
+**장점**
+1. 파일 시스템 기반의 간편한 페이지 라우팅 제공
+2. 다양한 방식의 사전 렌더링 제공
+
+**단점**
+1. 페이지별 레이아웃 설정이 번거롭다 (`getLayout` 메서드)
+2. 데이터 페칭이 페이지 컴포넌트에 집중된다 (`getServerSideProps`, `getStaticProps`)
+3. 불필요한 컴포넌트들도 JS Bundle에 포함된다
+
 ### SSR vs SSG
 #### SSR(Server Side Rendering)
 - `getServerSideProps`
@@ -63,3 +74,9 @@ export default function Page() {
   )
 }
 ```
+
+### 배포하기
+- 설치 `npm install -g vercel`
+- 로그인 `vercel login`
+- 배포 `vercel`
+- 프로덕션 모드 배포 `vercel --prod`
