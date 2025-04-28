@@ -80,3 +80,8 @@ export default function Page() {
 - 로그인 `vercel login`
 - 배포 `vercel`
 - 프로덕션 모드 배포 `vercel --prod`
+
+<br>
+
+## 앱 라우터
+설치 `npx create-next-app@latest`
