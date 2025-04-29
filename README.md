@@ -85,3 +85,8 @@ export default function Page() {
 
 ## 앱 라우터
 설치 `npx create-next-app@latest`
+
+
+### 클라이언트 컴포넌트
+`"use client";`
+<br>특정 컴포넌트가 상호작용(입력이나 클릭 같은 이벤트를 처리할 상호작용)이 필요할 경우 **클라이언트 컴포넌트**로 만든다.
