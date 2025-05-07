@@ -90,3 +90,33 @@ export default function Page() {
 ### 클라이언트 컴포넌트
 `"use client";`
 <br>특정 컴포넌트가 상호작용(입력이나 클릭 같은 이벤트를 처리할 상호작용)이 필요할 경우 **클라이언트 컴포넌트**로 만든다.
+
+클라이언트 컴포넌트에서 서버 컴포넌트를 직접 import해서 사용하게 되면 **서버 컴포넌트는 클라이언트 컴포넌트로 변환**이 된다.
+=> children을 통해 가져오면 해결
+```tsx
+// client
+"use client";
+
+import {ReactNode} from "react";
+
+export default function ClientComponent({ children }: {children: ReactNode}) {
+  console.log("클라이언트 컴포넌트!");
+
+  return <div>{children}</div>;
+}
+
+// index
+import ClientComponent from "@/app/(with-searchbar)/client-component";
+import {ServerComponent} from "@/app/(with-searchbar)/server-component";
+
+export default function Home() {
+  return (
+    <div>
+      <ClientComponent>
+        <ServerComponent/>
+      </ClientComponent>
+    </div>
+  );
+}
+
+```
