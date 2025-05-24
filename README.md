@@ -120,3 +120,14 @@ export default function Home() {
 }
 
 ```
+
+<br>
+
+### 환경 변수 설정하기
+`NEXT.js`에서 환경변수를 설정할 때 접두사 `NEXT_PUBLIC`을 붙여야 함.
+```js
+NEXT_PUBLIC_XXX=URL
+
+// 불러올때
+const response = await fetch(`${process.env.NEXT_PUBLIC_XXX}/book`
+```
