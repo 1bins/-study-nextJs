@@ -131,3 +131,25 @@ NEXT_PUBLIC_XXX=URL
 // 불러올때
 const response = await fetch(`${process.env.NEXT_PUBLIC_XXX}/book`
 ```
+
+<br>
+
+### 데이터 캐시 옵션들
+fetch 메서드 url 뒤 옵션에 추가로 전달. `fetch('apiUrl', {// 캐시 옵션}`
+- `cache: no-store`
+  - 데이터 페칭의 결과를 저장하지 않는 옵션
+  - 앱 라우터 15버전부터 디폴트 값
+
+
+- `cache: force-cache`
+  - 요청의 결과를 무조건 캐싱함
+  - 한번 호출 된 이후에는 다시는 호출되지 않음
+
+
+- `next: {revalidate: n}`
+  - 특정 시간(n초)을 주기로 캐시를 업데이트 함(페이지 라우터의 ISR 방식과 유사)
+
+
+- `next: {tags: ['a']}`
+  - On-Demand Revalidate
+  - 요청이 들어왔을 때 데이터를 최신화 함
